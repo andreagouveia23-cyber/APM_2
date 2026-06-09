@@ -27,6 +27,79 @@ body {
     position: relative; /* Esto hace que la decoración no se escape de esta sección */
     text-align: left;
     margin-bottom: 280px;
+    animation: entradaSuave 1s ease-out forwards;
+}
+.decoracion-nombre {
+    position: absolute;
+    opacity: 1;         /* Súper claritas para que el texto se lea genial */
+    z-index: -1;          /* ¡Esto las manda al fondo por detrás de las letras! */
+    pointer-events: none; /* Las hace invisibles al clic del mouse */
+}
+
+/* DECORACIÓN 1: Primera imagen */
+.decoracion-1 {
+    width: 700px;        
+    top: -80px;
+    right: -5%;         
+    transform: rotate(15deg);
+}
+
+/* DECORACIÓN 2: Segunda imagen */
+.decoracion-2 {
+    width: 600px;        
+    bottom: -150px;
+    left: -5%;           
+    transform: rotate(-25deg);
+}
+
+.decoracion-3 {
+    width: 1000px;        
+    bottom: -1100px;
+    left: 62%;           
+    transform: rotate(40deg);
+}
+
+.decoracion-4 {
+    width: 500px;        
+    bottom: -530px;
+    left: -15%;           
+    transform: rotate(5deg);
+}
+
+.decoracion-5 {
+    width: 700px;        
+    top: 1300px;
+    right: 1%;         
+    transform: rotate(-15deg);
+}
+
+.decoracion-6 {
+    width: 600px;        
+    bottom: -1700px;
+    left: -9%;           
+    transform: rotate(40deg);
+}
+
+.decoracion-7 {
+    width: 400px;        
+    bottom: -1800px;
+    left: 20%;           
+    transform: rotate(40deg);
+}
+
+.decoracion-8 {
+    width: 900px;        
+    bottom: -2150px;
+    left: 45%;           
+    transform: rotate(0deg);
+    opacity: 5;
+}
+
+.decoracion-9 {
+    width: 500px;        
+    bottom: -1700px;
+    left: 75%;           
+    transform: rotate(40deg);
 }
 
 .presentacion-grande h1 {
@@ -49,8 +122,8 @@ body {
 /* Títulos de las secciones */
 .seccion h2, .seccion-contacto h2 {
     font-size: 1.8rem;
-    color: #D899FF; 
-    border-bottom: 2px solid #D899FF; 
+    color: #B305FF; 
+    border-bottom: 2px solid #B305FF; 
     padding-bottom: 12px;
     margin-bottom: 30px;
     text-align: center;
@@ -61,16 +134,16 @@ body {
 
 /* 2. BARRAS DE HABILIDADES EN FILA HORIZONTAL Y MÁS PEQUEÑAS */
 .contenedor-habilidades {
-    max-width: 1000px; /* Más ancho para dar espacio a la fila */
+    max-width: 1000px; 
     margin: 0 auto;
     display: flex;
-    flex-direction: row; /* ¡Puestas en fila horizontal! */
-    gap: 40px; /* Espacio de separación entre cada columna */
+    flex-direction: row; 
+    gap: 40px; 
     justify-content: center;
 }
 
 .barra-habilidad {
-    flex: 1; /* Hace que las tres barritas midan exactamente lo mismo */
+    flex: 1; 
     min-width: 200px;
 }
 
@@ -80,13 +153,13 @@ body {
     margin-bottom: 8px;
     color: #00FFC1;
     font-weight: 600;
-    font-size: 0.95rem; /* Letra un poco más pequeña y delicada */
+    font-size: 0.95rem; 
 }
 
 /* El carril de fondo (Más delgado) */
 .linea-progreso-fondo {
     width: 100%;
-    height: 6px; /* Reducido de 10px a 6px para que sean más finas */
+    height: 6px; 
     background-color: #161b22;
     border: 1px solid #30363d;
     border-radius: 10px;
@@ -121,7 +194,7 @@ body {
 
 .cuadro-proyecto:hover {
     transform: translateY(-5px);
-    border-color: #00FFC1; 
+    border-color: #50a234; 
     box-shadow: 0 10px 20px rgba(0, 255, 193, 0.15);
 }
 
@@ -131,7 +204,7 @@ body {
     object-fit: cover; 
 }
 
-/* --- ESTILOS DEL VISOR INTERACTIVO CON TEXTO --- */
+/* --- AQUÍ ESTÁN LOS ESTILOS MODIFICADOS DEL VISOR (IMAGEN ARRIBA, TEXTO ABAJO) --- */
 .lightbox {
     display: none; 
     position: fixed;
@@ -143,16 +216,17 @@ body {
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 20px;
 }
 
 .contenido-lightbox {
     display: flex;
-    max-width: 1100px;
-    width: 90%;
-    max-height: 85vh;
+    flex-direction: column;  /* Alineación vertical solicitada */
+    max-width: 800px;        /* Ajuste de ancho ideal para este diseño */
+    width: 95%;
+    max-height: 90vh;
     background-color: #020202;
-    border: 1px solid #0A0C0D;
+    border: 1px solid #30363d;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
@@ -160,41 +234,35 @@ body {
 }
 
 .bloque-imagen {
-    flex: 1.5; 
+    width: 100%;
     background-color: #020202;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 25px;       /* Despega sutilmente la imagen del borde superior */
 }
 
 .bloque-imagen img {
-    max-width: 100%;
-    max-height: 85vh;
+    max-width: 90%;
+    max-height: 60vh;        /* Le da prioridad a la imagen sin romper el alto de pantalla */
     object-fit: contain;
 }
 
 .bloque-texto {
-    flex: 1; 
-    padding: 40px;
+    width: 100%; 
+    padding: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-left: 1px solid #30363d;
-}
-
-.bloque-texto h3 {
-    color: #FF00EA; 
-    margin-top: 0;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    text-align: center;      /* Centra tu texto debajo de la imagen */
+    box-sizing: border-box;
 }
 
 .bloque-texto p {
     color: #00FFC1;
     font-size: 1.1rem;
-    line-height: 1.2;
-    margin: 0;
-    margin-top: 450px;
+    line-height: 1.4;
+    margin: 0;               /* Eliminado el margin-top de 450px para evitar espacios gigantes vacíos */
 }
 
 .cerrar-lightbox {
@@ -210,7 +278,7 @@ body {
 }
 
 .cerrar-lightbox:hover {
-    color: #00FFC1; 
+    color: #B305FF;          /* Combina con el color violeta de tus títulos */
 }
 
 @keyframes aparecer {
@@ -256,9 +324,9 @@ body {
 }
 
 .icono-contacto:hover {
-    border-color: #D899FF;
+    border-color: #B305FF;
     color: #0A0C0D;
-    background-color: #D899FF;
+    background-color: #B305FF;
     transform: translateY(-4px);
     box-shadow: 0 8px 15px rgba(112, 6, 126, 0.3);
 }
@@ -274,7 +342,6 @@ body {
     .cuadro-proyecto {
         height: 300px; 
     }
-    /* CORRECCIÓN CELULARES: Las barras vuelven a ponerse en lista vertical para que no se aplasten */
     .contenedor-habilidades {
         flex-direction: column;
         gap: 20px;
@@ -293,5 +360,17 @@ body {
         top: 15px;
         right: 20px;
         font-size: 2rem;
+    }
+}
+
+/* ANIMACIONES AL FINAL DEL ARCHIVO */
+@keyframes entradaSuave {
+    from {
+        opacity: 0;            
+        transform: translateY(90px); 
+    }
+    to {
+        opacity: 1;            
+        transform: translateY(0);    
     }
 }
