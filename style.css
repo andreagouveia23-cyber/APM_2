@@ -1,0 +1,296 @@
+/* Estilo Base Oscuro */
+body {
+    background-color: #0A0C0D;
+    color: #e2e8f0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Ocupa todo el ancho de la pantalla */
+.contenedor-principal {
+    max-width: 100%; 
+    width: 90%;      
+    padding: 80px 40px; 
+}
+
+/* Espacio común para separar cada bloque */
+.seccion {
+    margin-bottom: 100px;
+}
+
+/* 1. Tu nombre gigante */
+.presentacion-grande {
+    position: relative; /* Esto hace que la decoración no se escape de esta sección */
+    text-align: left;
+    margin-bottom: 280px;
+}
+
+.presentacion-grande h1 {
+    font-size: 8rem; 
+    font-weight: 800; 
+    letter-spacing: -2px; 
+    margin: 0;
+    color: #00FFC1;
+    line-height: 1.0; 
+}
+
+.descripcion {
+    color: #00FFC1;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-top: 25px;
+    max-width: 800px; 
+}
+
+/* Títulos de las secciones */
+.seccion h2, .seccion-contacto h2 {
+    font-size: 1.8rem;
+    color: #D899FF; 
+    border-bottom: 2px solid #D899FF; 
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 320px;   
+    margin-left: auto;  
+    margin-right: auto;
+}
+
+/* 2. BARRAS DE HABILIDADES EN FILA HORIZONTAL Y MÁS PEQUEÑAS */
+.contenedor-habilidades {
+    max-width: 1000px; /* Más ancho para dar espacio a la fila */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; /* ¡Puestas en fila horizontal! */
+    gap: 40px; /* Espacio de separación entre cada columna */
+    justify-content: center;
+}
+
+.barra-habilidad {
+    flex: 1; /* Hace que las tres barritas midan exactamente lo mismo */
+    min-width: 200px;
+}
+
+.info-habilidad {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #00FFC1;
+    font-weight: 600;
+    font-size: 0.95rem; /* Letra un poco más pequeña y delicada */
+}
+
+/* El carril de fondo (Más delgado) */
+.linea-progreso-fondo {
+    width: 100%;
+    height: 6px; /* Reducido de 10px a 6px para que sean más finas */
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* La barrita de progreso */
+.linea-progreso-llena {
+    height: 100%;
+    background-color: #00FFC1;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 255, 193, 0.4);
+}
+
+/* 3. GALERÍA EN CUADROS (GRID) */
+.galeria-trabajos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    width: 100%;
+}
+
+.cuadro-proyecto {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 400px; 
+    cursor: pointer; 
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cuadro-proyecto:hover {
+    transform: translateY(-5px);
+    border-color: #00FFC1; 
+    box-shadow: 0 10px 20px rgba(0, 255, 193, 0.15);
+}
+
+.cuadro-proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* --- ESTILOS DEL VISOR INTERACTIVO CON TEXTO --- */
+.lightbox {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 12, 13, 0.98); 
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.contenido-lightbox {
+    display: flex;
+    max-width: 1100px;
+    width: 90%;
+    max-height: 85vh;
+    background-color: #0A0C0D;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    animation: aparecer 0.25s ease-out;
+}
+
+.bloque-imagen {
+    flex: 1.5; 
+    background-color: #020202;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bloque-imagen img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
+.bloque-texto {
+    flex: 1; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid #30363d;
+}
+
+.bloque-texto h3 {
+    color: #FF00EA; 
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.bloque-texto p {
+    color: #00FFC1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cerrar-lightbox {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #00FFC1;
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 1010;
+}
+
+.cerrar-lightbox:hover {
+    color: #00FFC1; 
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* 4. Contactos */
+.seccion-contacto {
+    padding-top: 20px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.seccion-contacto p {
+    color: #00FFC1;
+    margin-bottom: 35px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.enlaces-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.icono-contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #0A0C0D;
+    border: 2px solid #00FFC1;
+    color: #00FFC1;
+    border-radius: 50%; 
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.icono-contacto:hover {
+    border-color: #FF00EA;
+    color: #0A0C0D;
+    background-color: #FF00EA;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(255, 0, 234, 0.3);
+}
+
+/* AJUSTE RESPONSIVE */
+@media (max-width: 768px) {
+    .presentacion-grande h1 {
+        font-size: 3.5rem; 
+    }
+    .contenedor-principal {
+        padding: 40px 20px;
+    }
+    .cuadro-proyecto {
+        height: 300px; 
+    }
+    /* CORRECCIÓN CELULARES: Las barras vuelven a ponerse en lista vertical para que no se aplasten */
+    .contenedor-habilidades {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contenido-lightbox {
+        flex-direction: column;
+        max-height: 90vh;
+        width: 95%;
+    }
+    .bloque-texto {
+        border-left: none;
+        border-top: 1px solid #30363d;
+        padding: 20px;
+    }
+    .cerrar-lightbox {
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+    }
+}

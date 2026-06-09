@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio | Andrea Gouveia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        
+        <header class="presentacion-grande">
+        
+            <h1>¡Hola, soy Andrea Gouveia!</h1>
+            <p class="descripcion">
+                Estudiante de 2.º año de Diseño de Comunicación. En esta página podrás encontrar algunos de los trabajos que he realizado a lo largo de mi formación hasta ahora.
+
+En cuanto a mi experiencia laboral, anteriormente cursé una formación profesional durante la educación secundaria, lo que me permitió realizar unas prácticas profesionales. Gracias a esta experiencia, desarrollé habilidades de trabajo en equipo, organización y responsabilidad.
+
+            </p>
+        </header>
+
+        <section class="seccion">
+            <h2>Habilidades Técnicas</h2>
+            <div class="contenedor-habilidades">
+                
+                <div class="barra-habilidad">
+                    <div class="info-habilidad">
+                        <span>Illustrator</span>
+                        
+                    </div>
+                    <div class="linea-progreso-fondo">
+                        <div class="linea-progreso-llena" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="barra-habilidad">
+                    <div class="info-habilidad">
+                        <span>Photoshop</span>
+                        
+                    </div>
+                    <div class="linea-progreso-fondo">
+                        <div class="linea-progreso-llena" style="width: 55%;"></div>
+                    </div>
+                </div>
+
+                <div class="barra-habilidad">
+                    <div class="info-habilidad">
+                        <span>InDesign</span>
+                       
+                    </div>
+                    <div class="linea-progreso-fondo">
+                        <div class="linea-progreso-llena" style="width: 40%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="seccion">
+            <h2>Trabajos</h2>
+            
+            <div class="galeria-trabajos">
+                <div class="cuadro-proyecto" onclick="abrirImagen('Arriba abajo_2_trama.png', 'Proyecto de Trama - Composicion realizada con obejtos, y experimentacion con trama.')"><img src="Arriba abajo_2_trama.png" alt="Proyecto 1"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('AndreaGouveia_DC_CartazEvento_251226.areglos.00001.png', 'Poster de Evento - Ilustracion de un poster sobre el Dia de los Muertos.')"><img src="AndreaGouveia_DC_CartazEvento_251226.areglos.00001.png" alt="Proyecto 2"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('AF_250211_AndreaGouveia_Cartaz_final.png', 'Poster Arte Nova - Ejercicio de jerarquía visual y uso del espacio negativo.')"><img src="AF_250211_AndreaGouveia_Cartaz_final.png" alt="Proyecto 3"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('AndreaGouveia_tipografia_Apagao.png', 'Tipografía Apagão - Proyecto de diseño de tipos inspirado en conceptos de oscuridad y contraste.')"><img src="AndreaGouveia_tipografia_Apagao.png" alt="Proyecto 4"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('Final_publicidade_bebida_retoques_Mesa de trabajo 1.jpg', 'Publicidad de Bebida - Retoque fotográfico digital e integración de marca en entorno comercial.')"><img src="Final_publicidade_bebida_retoques_Mesa de trabajo 1.jpg" alt="Proyecto 5"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('SKM_C454e25033115240_0001.jpg', 'Proyecto Editorial - Maquetación y estructura de sistemas de retículas complejas.')"><img src="SKM_C454e25033115240_0001.jpg" alt="Proyecto 6"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('redencion_trabajo_serigrafia-30.jpg', 'Trabajo de Serigrafia - Experimentación con tintas planas y procesos de impresión manual.')"><img src="redencion_trabajo_serigrafia-30.jpg" alt="Proyecto 7"></div>
+                <div class="cuadro-proyecto" onclick="abrirImagen('mmmmm.jpg', 'Proyecto Libre - Exploración artística y combinación de técnicas digitales.')"><img src="mmmmm.jpg" alt="Proyecto 8"></div>
+            </div>
+        </section>
+
+        <div class="lightbox" id="pantalla-gigante">
+            <span class="cerrar-lightbox" onclick="cerrarImagen()">✕</span>
+            <div class="contenido-lightbox">
+                <div class="bloque-imagen">
+                    <img id="imagen-grande" src="" alt="Imagen gigante">
+                    <img id="imagen-grande" src="" alt="Imagen gigante">
+
+
+                </div>
+                <div class="bloque-texto">
+                    
+                    <p id="texto-descripcion">Aquí irá la descripción que elegiste.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="seccion-contacto">
+            <h2>Contacto</h2>
+            <p>Si te intereso mi trabajo y quieres trabajar conmigo, ¡Contactame!</p>
+            <div class="enlaces-contacto">
+                <a href="mailto:tu-correo@email.com" class="icono-contacto" title="Enviar Correo"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.instagram.com/celesttini/?hl=es" target="_blank" class="icono-contacto" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="tel:+123456789" class="icono-contacto" title="Teléfono"><i class="fa-solid fa-phone"></i></a>
+                
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function abrirImagen(ruta, descripcion) {
+            document.getElementById('imagen-grande').src = ruta;
+            document.getElementById('texto-descripcion').innerText = descripcion;
+            document.getElementById('pantalla-gigante').style.display = 'flex';
+        }
+
+        function cerrarImagen() {
+            document.getElementById('pantalla-gigante').style.display = 'none';
+        }
+
+        document.getElementById('pantalla-gigante').addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('contenido-lightbox')) {
+                cerrarImagen();
+            }
+        });
+    </script>
+
+</body>
+</html>
