@@ -111,7 +111,7 @@ body {
 
 .cuadro-proyecto {
     background-color: #161b22;
-    border: 1px solid #0A0C0D;
+    border: 1px solid #30363d;
     border-radius: 12px;
     overflow: hidden;
     height: 400px; 
@@ -151,8 +151,8 @@ body {
     max-width: 1100px;
     width: 90%;
     max-height: 85vh;
-    background-color: #0A0C0D;
-    border: 1px solid #30363d;
+    background-color: #020202;
+    border: 1px solid #0A0C0D;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
@@ -192,8 +192,9 @@ body {
 .bloque-texto p {
     color: #00FFC1;
     font-size: 1.1rem;
-    line-height: 1.6;
+    line-height: 1.2;
     margin: 0;
+    margin-top: 450px;
 }
 
 .cerrar-lightbox {
@@ -255,11 +256,11 @@ body {
 }
 
 .icono-contacto:hover {
-    border-color: #FF00EA;
+    border-color: #D899FF;
     color: #0A0C0D;
-    background-color: #FF00EA;
+    background-color: #D899FF;
     transform: translateY(-4px);
-    box-shadow: 0 8px 15px rgba(255, 0, 234, 0.3);
+    box-shadow: 0 8px 15px rgba(112, 6, 126, 0.3);
 }
 
 /* AJUSTE RESPONSIVE */
